@@ -78,6 +78,8 @@ aCl :: Form -> Form
 aCl phi = aClaux phi (fv phi) -- Llamada a la función auxiliar con φ y una lista
                               -- que contiene sus variables libres.
 
+-- Dada una fórmula de la LPO y una lista de variables, devuelve la fórmula
+-- con los cuantificadores universales necesarios para la cerradura.
 aClaux :: Form -> [Ind] -> Form
 aClaux phi l = case l of
     [] -> phi
@@ -92,6 +94,8 @@ eCl :: Form -> Form
 eCl phi = eClaux phi (fv phi) -- Llamada a la función auxiliar con φ y una lista
                               -- que contiene sus variables libres.
 
+-- Dada una fórmula de la LPO y una lista de variables, devuelve la fórmula
+-- con los cuantificadores existenciales necesarios para la cerradura.
 eClaux :: Form -> [Ind] -> Form
 eClaux phi l = case l of
     [] -> phi

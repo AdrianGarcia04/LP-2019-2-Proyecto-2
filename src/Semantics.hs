@@ -38,10 +38,10 @@ iTerm e iF t = case t of
                                             -- de términos interpretados
                                             -- recursivamente.
 
--- Interpretación de fórmilas. Dada una estructura, un estado y una fórmula
+-- Interpretación de fórmulas. Dada una estructura, un estado y una fórmula
 -- de la LPO, determina el valor de verdad de la fórmula bajo
 -- dicha interpretación y estado de las variables.
-iForm :: Eq a => Estructura a -> Estado a -> Form -> Bool
+iForm :: (Eq a) => Estructura a -> Estado a -> Form -> Bool
 iForm str e phi = case phi of
     FalseF -> False
     TrueF -> True
@@ -68,6 +68,6 @@ iForm str e phi = case phi of
 
 
 -- Satisfacibilidad de fórmulas. Dada una estructura, un estado y una fórmula
--- de la LPO, determina si la fórmula es satifacible bajo dicho modelo.
-satForm :: Eq a => Estructura a -> Estado a -> Form -> Bool
+-- de la LPO, determina si la fórmula es satisfacible bajo dicho modelo.
+satForm :: (Eq a) => Estructura a -> Estado a -> Form -> Bool
 satForm str e phi = iForm str e phi
