@@ -10,7 +10,7 @@ type Nombre = String
 
 -- Definición de términos. Son variables o funciones (la aridad está especificada
 -- por la longitud de la lista de términos).
-data Term = V Ind | F Nombre [Term]
+data Term = V Ind | F Nombre [Term] deriving (Show, Eq)
 
 -- Definición de fórmulas.
 data Form = TrueF
